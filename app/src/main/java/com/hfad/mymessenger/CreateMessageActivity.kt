@@ -23,7 +23,6 @@ class CreateMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_message)
 
-
         // 버튼을 클릭하면build onClick 호출
         send.onClick {
             val sendMessage = messageEditText.text.toString()
@@ -32,11 +31,8 @@ class CreateMessageActivity : AppCompatActivity() {
                 putExtra(Intent.EXTRA_TEXT,sendMessage)
                 type = "text/plain"
             }
-
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
-
-
         }
     }
 }
